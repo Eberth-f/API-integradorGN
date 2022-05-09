@@ -1,0 +1,30 @@
+- model: workers.WorkerTask
+  pk: 1
+  fields:
+    name: Gera - Nota Fiscal - Criar Registro Inicial
+    module_task: vendas.gera.nota_fiscal_criar.GeraNotaFiscalCriarWorkerTask
+    heartbeat: 60
+
+- model: workers.WorkerQueue
+  pk: 1
+  fields:
+    name: GeraNotaFiscalCriarRegistroInicial
+
+- model: workers.WorkerPool
+  pk: 1
+  fields:
+    name: GERA - Integração de Vendas
+    code: GeraIntegracaoVendas
+
+- model: workers.WorkerThread
+  pk: 1
+  fields:
+    name: Gera - Nota Fiscal - Criar Registro Inicial 
+    queue: 1
+    task: 1
+
+- model: workers.WorkerPoolThread
+  pk: 1
+  fields:
+    pool: 1
+    thread: 1

@@ -1,0 +1,50 @@
+version: '3.3'
+
+networks:
+  default:
+    external:
+      name: containers-network
+
+services:
+  db:
+    container_name: db
+    deploy:
+      restart_policy:
+        condition: on-failure
+      resources:
+        reservations:
+          cpus: '0.0'
+          memory: 0M
+        limits:
+          cpus: '0.5'
+          memory: 512M
+    image: postgres:11
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=default
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+    #  - ../../root/db:/var/lib/postgresql/data
+    - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  message_broker:
+    container_name: message_broker
+    image: "rabbitmq:3.9-management"
+    hostname: "rabbitmq"
+    environment:
+      RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+      RABBITMQ_DEFAULT_USER: "rabbitmq"
+      RABBITMQ_DEFAULT_PASS: "rabbitmq"
+      RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    labels:
+      NAME: "rabbitmq"
+    # volumes:
+      # - "./enabled_plugins:/etc/rabbitmq/enabled_plugins"
+      # - "./rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro"
+      # - "./autocluster-0.4.1.ez:/usr/lib/rabbitmq/lib/rabbitmq_server-3.5.5/plugins/autocluster-0.4.1.ez"

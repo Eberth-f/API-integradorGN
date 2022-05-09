@@ -1,0 +1,197 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python: Arquivo Atual",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django: Run Server",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/scripts/python",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "runserver"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django: Run Worker",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/scripts/python",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "runworker",
+                "GeraIntegracaoVendas"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django: Make Migrations (All)",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/scripts/python",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "makemigrations"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django: Migrate (All)",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/scripts/python",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "migrate"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django: Make Migrations (Manager)",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/scripts/python",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "makemigrations",
+                "manager"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django: Migrate (Manager)",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/scripts/python",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "migrate",
+                "manager"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django: Load Data (Manager)",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/scripts/python",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "loaddata",
+                "manager_dev_fixture.yaml"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django: Make Migrations (Workers)",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/scripts/python",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "makemigrations",
+                "workers"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django: Migrate (Workers)",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/scripts/python",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "migrate",
+                "workers"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django: Test (Workers)",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/scripts/python",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "test",
+                "workers"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django: Test (Workers - Specify)",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/scripts/python",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "test",
+                "workers.business.tests.cases.vendas.gera.nota_fiscal_criar_test.GeraNotaFiscalCriarWorkerTaskTestCase.test_nota_fiscal_criar_task"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django: Make Migrations (Datalake)",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/scripts/python",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "makemigrations",
+                "datalake"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django: Migrate (Datalake)",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/scripts/python",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "migrate",
+                "datalake",
+                "--database",
+                "vendas"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django: Load Data (Workers)",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/scripts/python",
+            "program": "${workspaceFolder}/manage.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "loaddata",
+                "workers_dev_fixture.yaml"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}

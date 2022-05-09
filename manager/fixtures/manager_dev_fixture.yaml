@@ -1,0 +1,6 @@
+- model: manager.Empresa
+  pk: 1
+  fields:
+    nome: CAULE VD PARTAGE
+    codigo_sap: 5008
+    codigo_gera: 1262
